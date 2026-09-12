@@ -1,0 +1,82 @@
+{
+  "identity": {
+    "name": "Dr. Mayna Talukdar",
+    "nameBn": "",
+    "title": "",
+    "titleBn": "",
+    "department": "",
+    "institution": "University of Dhaka",
+    "portrait": { "src": null, "alt": { "en": "", "bn": "" }, "credit": "" },
+    "shortBio": { "en": "", "bn": "" },
+    "longBio": { "en": "", "bn": "" }
+  },
+  "research": {
+    "statement": { "en": "", "bn": "" },
+    "specializations": [],
+    "keywords": []
+  },
+  "appointments": [],
+  "projects": [
+    {
+      "title": "",
+      "period": "",
+      "status": "Ongoing",
+      "funder": "",
+      "description": "",
+      "url": null,
+      "source": "",
+      "verified": false
+    }
+  ],
+  "publications": {
+    "books": [
+      {
+        "title": "",
+        "year": null,
+        "publisher": "",
+        "isbn": null,
+        "url": null,
+        "linkType": null,
+        "downloadUrl": null,
+        "source": "",
+        "verified": false
+      }
+    ],
+    "articles": [
+      {
+        "title": "",
+        "year": null,
+        "journal": "",
+        "volumeIssuePages": "",
+        "doi": null,
+        "url": null,
+        "linkType": null,
+        "downloadUrl": null,
+        "source": "",
+        "verified": false
+      }
+    ]
+  },
+  "supervision": {
+    "mphilCompleted": null,
+    "phdCompleted": null,
+    "currentScholars": null,
+    "notes": { "en": "", "bn": "" }
+  },
+  "lectures": [],
+  "fellowships": [],
+  "teaching": [],
+  "service": [],
+  "travel": [],
+  "links": {
+    "university": "",
+    "googleScholar": "",
+    "orcid": "",
+    "researchGate": ""
+  },
+  "contact": {
+    "email": null,
+    "address": null,
+    "contactUrl": null
+  }
+}
