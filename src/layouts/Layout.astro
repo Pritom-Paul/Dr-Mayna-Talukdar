@@ -25,8 +25,8 @@ const navItems = [
 ---
 
 <!doctype html>
-<html lang="en" data-language="en">
-	<head>
+		<html lang="en" data-language="en" data-theme="light">
+		<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
@@ -36,6 +36,13 @@ const navItems = [
 		<meta property="og:type" content="profile" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="author" content="Dr. Mayna Talukdar" />
+		<script is:inline>
+			try {
+				const storedTheme = window.localStorage.getItem('mayna-theme');
+				const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.dataset.theme = storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : systemTheme;
+			} catch { /* Use the light fallback when storage is unavailable. */ }
+		</script>
 		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
 		<link rel="icon" href={`${base}favicon.ico`} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,6 +69,9 @@ const navItems = [
 					<a class="du-link" href="https://du.ac.bd/faculty/faculty_details/SPL/1204" target="_blank" rel="noreferrer">
 						<span class="du-logo-frame"><img class="du-logo" src={`${base}images/university-of-dhaka-logo.png`} alt="University of Dhaka logo" /></span><span class="du-link-label">University profile</span>
 					</a>
+					<button class="theme-toggle" type="button" data-theme-toggle title="Change theme">
+						<span data-theme-icon aria-hidden="true">☾</span><span class="sr-only"><LanguageText {...ui.actions.switchTheme} /></span>
+					</button>
 					<button class="language-toggle" type="button" data-language-toggle aria-label="Switch language"><span class="lang-en">বাংলা</span><span class="lang-bn">English</span></button>
 				</div>
 			</div>
@@ -78,14 +88,32 @@ const navItems = [
 			const menuButton = document.querySelector('.menu-toggle');
 			const navigation = document.querySelector('#site-navigation');
 			const languageButton = document.querySelector('[data-language-toggle]');
+			const themeButton = document.querySelector('[data-theme-toggle]');
+			const themeIcon = document.querySelector('[data-theme-icon]');
 			const savedLanguage = window.localStorage.getItem('mayna-language');
 			// @ts-ignore Astro treats this inline browser script as JavaScript.
-			const setLanguage = (language) => {
+			const updateThemeButton = () => {
+				const dark = root.dataset.theme === 'dark';
+				const englishLabel = dark ? 'Switch to light theme' : 'Switch to dark theme';
+				const bengaliLabel = dark ? 'লাইট থিমে পরিবর্তন করুন' : 'ডার্ক থিমে পরিবর্তন করুন';
+				const label = root.dataset.language === 'bn' ? bengaliLabel : englishLabel;
+				themeButton?.setAttribute('aria-label', label);
+				themeButton?.setAttribute('title', label);
+				if (themeIcon) themeIcon.textContent = dark ? '☀︎' : '☾';
+			};
+			const setTheme = (theme: 'dark' | 'light') => {
+				root.dataset.theme = theme === 'dark' ? 'dark' : 'light';
+				window.localStorage.setItem('mayna-theme', root.dataset.theme);
+				updateThemeButton();
+			};
+			const setLanguage = (language: 'bn' | 'en') => {
 				root.dataset.language = language;
 				root.lang = language === 'bn' ? 'bn' : 'en';
 				window.localStorage.setItem('mayna-language', language);
+				updateThemeButton();
 			};
 			if (savedLanguage === 'bn') setLanguage('bn');
+			updateThemeButton();
 			menuButton?.addEventListener('click', () => {
 				const expanded = menuButton.getAttribute('aria-expanded') === 'true';
 				menuButton.setAttribute('aria-expanded', String(!expanded));
@@ -95,6 +123,7 @@ const navItems = [
 				menuButton?.setAttribute('aria-expanded', 'false');
 				navigation?.classList.remove('is-open');
 			}));
+			themeButton?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 			languageButton?.addEventListener('click', () => setLanguage(root.dataset.language === 'bn' ? 'en' : 'bn'));
 		</script>
 	</body>

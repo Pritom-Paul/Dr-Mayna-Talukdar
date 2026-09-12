@@ -14,7 +14,7 @@ if (html.includes('/Dr-Mayna-Talukdar/')) fail('old GitHub Pages base path still
 for (const landmark of ['<header', '<nav', '<main id="main-content"', '<footer']) {
 	if (!html.includes(landmark)) fail(`missing landmark: ${landmark}`);
 }
-for (const required of ['data-language="en"', 'data-language-toggle', 'aria-controls="site-navigation"', 'class="lang-en"', 'class="lang-bn"']) {
+for (const required of ['data-language="en"', 'data-theme="light"', 'data-language-toggle', 'data-theme-toggle', 'aria-controls="site-navigation"', 'class="lang-en"', 'class="lang-bn"']) {
 	if (!html.includes(required)) fail(`missing bilingual/navigation hook: ${required}`);
 }
 
@@ -28,6 +28,7 @@ for (const match of html.matchAll(/<a\b([^>]+)>/g)) {
 if (!/@media \((?:max-width: 760px|width<=760px)\)/.test(css)) fail('mobile breakpoint missing');
 if (!css.includes(':focus-visible')) fail('visible focus style missing');
 if (!css.includes('prefers-reduced-motion')) fail('reduced-motion support missing');
+if (!/data-theme=(?:['"])?dark/.test(css)) fail('dark theme styles missing');
 if (!css.includes('Noto Sans Bengali')) fail('Bengali-capable font missing');
 
 console.log('STATIC AUDIT PASSED');

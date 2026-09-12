@@ -13,6 +13,7 @@
     "readArticle": { "en": "Read article", "bn": "প্রবন্ধ পড়ুন" },
     "email": { "en": "Email Dr. Talukdar", "bn": "ড. তালুকদারকে ইমেইল করুন" },
     "toggleMenu": { "en": "Toggle navigation", "bn": "নেভিগেশন টগল করুন" },
+    "switchTheme": { "en": "Change theme", "bn": "থিম পরিবর্তন করুন" },
     "switchLanguage": { "en": "বাংলা", "bn": "English" }
   },
   "labels": {
