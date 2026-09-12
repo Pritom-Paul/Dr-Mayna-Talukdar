@@ -10,6 +10,7 @@ const fail = (message) => {
 const count = (pattern) => (html.match(pattern) ?? []).length;
 
 if (count(/<h1\b/g) !== 1) fail('expected exactly one h1');
+if (html.includes('/Dr-Mayna-Talukdar/')) fail('old GitHub Pages base path still present');
 for (const landmark of ['<header', '<nav', '<main id="main-content"', '<footer']) {
 	if (!html.includes(landmark)) fail(`missing landmark: ${landmark}`);
 }
@@ -21,7 +22,7 @@ for (const match of html.matchAll(/<a\b([^>]+)>/g)) {
 	const attrs = match[1];
 	if (/target="_blank"/.test(attrs) && !/rel="[^"]*noreferrer/.test(attrs)) fail('target=_blank link missing rel=noreferrer');
 	const href = attrs.match(/href="([^"]+)"/)?.[1];
-	if (href?.startsWith('/') && !href.startsWith('/dr-mayna-portfolio/')) fail(`root-relative URL is not base-aware: ${href}`);
+	if (href?.startsWith('/Dr-Mayna-Talukdar/')) fail(`old GitHub Pages URL is still present: ${href}`);
 }
 
 if (!/@media \((?:max-width: 760px|width<=760px)\)/.test(css)) fail('mobile breakpoint missing');

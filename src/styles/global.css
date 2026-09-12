@@ -40,7 +40,8 @@ button { font: inherit; }
 .site-nav a:hover, .site-nav a:focus-visible { color: var(--indigo); }
 .header-actions { display: flex; align-items: center; gap: 12px; }
 .du-link { display: flex; gap: 8px; align-items: center; color: var(--indigo); font-size: 12px; font-weight: 600; }
-.du-seal { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid var(--indigo); border-radius: 50%; font-size: 9px; letter-spacing: -.05em; }
+.du-logo-frame { display: grid; width: 111px; height: 38px; place-items: center; padding: 4px 6px; border-radius: 6px; background: var(--indigo-deep); }
+.du-logo { display: block; width: 99px; height: auto; }
 .language-toggle, .menu-toggle { border: 1px solid var(--line); background: white; color: var(--indigo); cursor: pointer; }
 .language-toggle { border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 700; }
 .menu-toggle { display: none; border-radius: 8px; padding: 8px 11px; }
@@ -62,7 +63,7 @@ button { font: inherit; }
 .hero-panel::before { content: ''; position: absolute; width: 300px; height: 300px; right: -80px; top: -90px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255,255,255,.04), 0 0 0 57px rgba(255,255,255,.03); }
 .hero-panel::after { content: 'संस्कृत'; position: absolute; right: 26px; bottom: 18px; color: rgba(255,255,255,.08); font-family: 'Playfair Display', serif; font-size: 58px; }
 .portrait-placeholder { position: relative; z-index: 1; display: grid; height: 300px; place-items: center; border: 1px solid rgba(255,255,255,.22); border-radius: 16px; background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.03)); color: white; }
-.portrait-image { position: relative; z-index: 1; display: block; width: 100%; height: 300px; border-radius: 16px; object-fit: cover; object-position: center; }
+.portrait-image { position: relative; z-index: 1; display: block; width: 100%; height: 300px; border-radius: 16px; object-fit: cover; object-position: center 30%; }
 .portrait-placeholder span { font-family: 'Playfair Display', serif; font-size: 120px; line-height: 1; color: rgba(255,255,255,.78); }
 .portrait-label { position: absolute; right: 14px; bottom: 12px; margin: 0; color: rgba(255,255,255,.62); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
 .hero-meta { position: relative; z-index: 1; display: grid; gap: 8px; margin-top: 25px; color: rgba(255,255,255,.8); font-size: 13px; }

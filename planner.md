@@ -5,10 +5,10 @@
 - Framework: Astro `^7.3.2`
 - Package manager: npm (`package-lock.json` is present)
 - Current source: minimal starter with only `src/pages/index.astro`
-- Current config: `astro.config.mjs` has no `site`, `base`, integrations, or adapter
+- Current config: `astro.config.mjs` uses a root deployment path for Vercel; no adapter is needed for this static site
 - Tailwind: not installed or configured yet
-- Existing assets: `public/favicon.svg` and `public/favicon.ico`
-- Intended deployment: static GitHub Pages at `/dr-mayna-portfolio`
+- Existing assets: favicon files, supplied portrait, and official University of Dhaka wordmark in `public/images/`
+- Intended deployment: static Vercel deployment from the repository root
 
 ## 2. Objective
 
@@ -24,11 +24,11 @@ For publications, titles and citation wording will be taken exactly from the det
 
 These values must be confirmed before production content is written:
 
-1. GitHub username and exact repository name. The repository name determines `base`; the GitHub username determines `site`.
-2. Whether the site will use a custom domain. If yes, provide the domain and DNS/`CNAME` preference.
+1. Deployment provider and project domain — resolved as Vercel; the final Vercel domain will be supplied by Vercel or configured as a custom domain after import.
+2. Whether the site will use a custom domain. If yes, provide the domain and DNS preference.
 3. The authoritative CV or faculty profile source. All dates, counts, titles, affiliations, and publication metadata should come from this source.
 4. Which contact details are safe to publish publicly.
-5. Profile photograph, department/university logos, and any image usage permissions.
+5. Profile photograph, department/university logos, and any image usage permissions — portrait supplied; official DU wordmark found; no separate Sanskrit Department mark identified.
 6. Official links: University of Dhaka profile, Google Scholar, ORCID, ResearchGate, institutional email, and any other approved scholarly profiles.
 7. Whether the publication inventory should contain all 9 research books and the claimed 21 research articles now. The detailed CV visibly lists 20 research-article entries, so the 21st item must be supplied or the count corrected.
 8. Preferred spelling/transliteration for Sanskrit and Bengali titles. Keep source titles unchanged, with an English transliteration/translation only where approved.
@@ -40,7 +40,7 @@ These values must be confirmed before production content is written:
 
 Use one long-form landing page with stable section IDs for the first release:
 
-- `/dr-mayna-portfolio/` — overview, hero, research, projects, publications, supervision, timeline, contact
+- `/` — overview, hero, research, projects, publications, supervision, timeline, contact
 - Optional later routes: `/publications/`, `/projects/`, or individual publication detail pages if the content volume warrants them
 
 Primary navigation: About, Research & Projects, Publications, Teaching & Supervision, Academic Service, Contact.
@@ -57,7 +57,7 @@ Language behavior:
 
 ```text
 .
-├── .github/workflows/deploy.yml          # GitHub Pages deployment
+├── astro.config.mjs                       # root-based Astro configuration for Vercel
 ├── docs/
 │   ├── CONTENT_INTAKE.md                  # human-facing content request
 │   ├── IMPLEMENTATION_CHECKLIST.md       # build/review checklist
@@ -103,14 +103,14 @@ The exact source-to-section mapping is recorded in `docs/CONTENT_MATRIX.md` befo
 1. Collect the completed intake form and authoritative CV.
 2. Normalize names, dates, roles, titles, ISBNs, DOIs, URLs, and counts.
 3. Mark every missing value as `null` or a clearly labeled placeholder; do not invent credentials or publication metadata.
-4. Confirm the GitHub URL and final base path.
+4. Confirm the Vercel project/domain and root deployment path.
 5. Complete the content matrix, including a source note for every displayed fact and a link-search result for every publication record.
 6. Reconcile conflicting totals and dates before the first production data file is created.
 
 ### Phase B — foundation
 
 1. Install and configure Tailwind using the approach supported by the current Astro version.
-2. Update `astro.config.mjs` with the confirmed `site` and `base`.
+2. Configure `astro.config.mjs` for root deployment; Vercel supplies the deployment domain.
 3. Add global design tokens, typography, focus styles, color contrast, responsive breakpoints, and reduced-motion support.
 4. Create `Layout.astro` with metadata, skip link, sticky header, mobile navigation behavior, footer, and base-aware internal links.
 5. Add a small bilingual interface dictionary and a progressive-enhancement language toggle. The page must remain readable if JavaScript is unavailable.
@@ -131,10 +131,10 @@ The exact source-to-section mapping is recorded in `docs/CONTENT_MATRIX.md` befo
 ### Phase D — quality and deployment
 
 1. Run formatting/type/build checks and fix all errors.
-2. Test the generated site at the configured base path, not only at `/`.
+2. Test the generated site at `/`, including the deployment domain after import.
 3. Check keyboard navigation, visible focus, headings, alt text, link labels, color contrast, and reduced motion.
 4. Test phone, tablet, and desktop widths plus long publication titles.
-5. Add the official GitHub Pages workflow and configure repository Pages to use GitHub Actions.
+5. Import the repository into Vercel with the Astro framework preset and verify the build settings.
 6. Verify deployed asset URLs, navigation, favicon, canonical URL, and 404 behavior.
 7. Perform a final content audit against the CV and `docs/CONTENT_MATRIX.md`; only then mark the release ready.
 
@@ -174,7 +174,7 @@ For bilingual content, human-facing strings should use a structure such as `{ "e
 
 - `npm run dev` starts successfully.
 - `npm run build` completes successfully.
-- The site works at `/dr-mayna-portfolio/` and all internal links preserve the base path.
+- The site works from the Vercel deployment root `/` and all internal links resolve from that root.
 - No fabricated biography, publication, award, or contact data appears.
 - All 9 books and 21 articles are present if that inventory is confirmed.
 - The published article count matches the verified itemized list.
@@ -183,7 +183,7 @@ For bilingual content, human-facing strings should use a structure such as `{ "e
 - Publications remain readable when titles or metadata wrap to multiple lines.
 - Navigation and interactive filtering are keyboard accessible.
 - The initial release does not require publication search/filter controls; category navigation and clear grouping are sufficient.
-- GitHub Pages deployment succeeds from the intended branch.
+- Vercel deployment succeeds from the intended repository and production branch.
 
 ## 11. Research findings and verification notes
 
@@ -193,7 +193,7 @@ The University of Dhaka profile lists a current Chairman appointment ending 9 Ja
 
 An official University of Dhaka Japanese Studies page provides a public article page for “A Study on the Iconographical Similarity between the Gods and Goddesses of Hindus and Buddhists of Japan: A Case Study,” including DOI `10.55156/jjsem.dec2119`. An official University of Dhaka Bengali journal page provides a DOI for the Bengali article on *Kṛṣṇakumārī Nāṭaka* and related Sanskrit dramas: `10.62328/sp.v51i2.10`.
 
-The University of Dhaka publication hub provides an official landing page for several listed works: https://du.ac.bd/public/publication/SPL. Its research-details index also provides a broader publication record, but entries will be matched title-by-title before linking: https://du.ac.bd/public/researchDetails/164.
+The University of Dhaka publication hub provides an official landing page for several listed works: https://du.ac.bd/publication/SPL. Its research-details index also provides a broader publication record, but entries will be matched title-by-title before linking: https://du.ac.bd/researchDetails/164.
 
 The University of Dhaka annual report and a 2025 Bhagavad Gita Research Foundation conference document provide additional corroboration for recent academic activity, co-editing, fellowship, supervision, and research-book claims. These will be used only where specific and consistent with the CV.
 
@@ -211,28 +211,28 @@ These sources can be linked from the site, but every additional item found on th
 - Scholar names and thesis titles have an explicit publish/omit decision.
 - Bengali interface copy and any Bengali translations of CV titles are reviewed for accuracy.
 - Each external link is exact, title-matched, and checked for a working destination.
-- The photo can remain an intentional placeholder until supplied; it must not block layout work.
+- The supplied portrait is now integrated; the layout still supports the intentional placeholder if the image is later withdrawn.
 
 ### Deployment gate still open
 
-- The GitHub username, repository name, branch, final `site`, and `base` must be confirmed before deployment. The requested `base` is already fixed as `/dr-mayna-portfolio`; only the username-dependent `site` value remains a placeholder.
+- Import `Pritom-Paul/Dr-Mayna-Talukdar` into Vercel and confirm the project domain and production branch.
 - Browser-only interaction, contrast, and viewport QA must be run in a local browser because no browser surface is available in this environment.
 
 ## 13. Execution checkpoint
 
-The final content preflight gate is now satisfied. The photo may be supplied later. The only open deployment gate is the replacement of the placeholder GitHub `site` value and the live GitHub Pages/browser verification.
+The final content preflight gate is now satisfied. The portrait is integrated; the remaining deployment gate is live Vercel/browser verification.
 
 ## 14. Implementation status
 
-Completed: Astro/Tailwind foundation, bilingual layout and toggle, responsive sections, verified CV data, publication/source-link handling, GitHub Pages workflow, README, type check, static build, generated-output inspection, external-link validation, content audit, and static accessibility/output audit.
+Completed: Astro/Tailwind foundation, bilingual layout and toggle, responsive sections, verified CV data, publication/source-link handling, root-based Vercel configuration, README, type check, static build, generated-output inspection, external-link validation, content audit, and static accessibility/output audit.
 
-Remaining: replace the placeholder GitHub `site` value, optionally add the portrait and approved logos, complete browser-based keyboard/contrast/responsive QA locally, and run the GitHub Actions deployment after the repository is configured for Pages. A static base-aware 404 page is now implemented.
+Remaining: confirm logo usage permission if required, complete browser-based keyboard/contrast/responsive QA locally, import the repository into Vercel, and verify the production deployment. A static root-aware 404 page is now implemented.
 
 ## References consulted
 
 - Astro Components: https://docs.astro.build/en/basics/astro-components/
 - Astro Styling and Tailwind: https://docs.astro.build/en/guides/styling/
-- Astro GitHub Pages deployment: https://docs.astro.build/en/guides/deploy/github/
+- Astro Vercel deployment: https://docs.astro.build/en/guides/deploy/vercel/
 - Astro Content Collections: https://docs.astro.build/en/guides/content-collections/
 - University of Dhaka faculty profile: https://www.du.ac.bd/body/faculty_details/SPL/1204
 - University of Dhaka Japanese Studies article page: https://djs.du.ac.bd/?p=2979

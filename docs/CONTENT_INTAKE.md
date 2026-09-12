@@ -6,9 +6,9 @@ Inclusion rule: include every academic/professional fact supported by the detail
 
 ## Deployment
 
-- GitHub username:
-- Exact repository name:
-- Confirmed public URL:
+- Source repository: `https://github.com/Pritom-Paul/Dr-Mayna-Talukdar`
+- Deployment provider: Vercel
+- Confirmed public URL: Pending Vercel project import
 - Custom domain, if any:
 - Deployment branch (usually `main`):
 
@@ -85,9 +85,9 @@ Please provide a spreadsheet, BibTeX, DOI list, publisher page, or CV list if av
 
 ## Visual assets
 
-- Approved portrait file:
-- Portrait credit/permission:
-- Logo files and usage permission:
+- Approved portrait file: `public/images/dr-mayna-talukdar-portrait.jpeg`
+- Portrait credit/permission: Supplied by the site owner; credit recorded in `profile.json`
+- Logo files and usage permission: `public/images/university-of-dhaka-logo.png`, sourced from `https://www.du.ac.bd/fontView/assets/img/dulogo-black.png`; separate official Sanskrit Department logo not found
 - Manuscript or lecture images and credits:
 - Preferred favicon/monogram:
 
@@ -109,5 +109,5 @@ The following public sources were found and should be reviewed/approved for link
 - University of Dhaka Japanese Studies article and DOI page: https://djs.du.ac.bd/?p=2979
 - University of Dhaka Bengali journal article and DOI page: https://journal.bangla.du.ac.bd/article/view/224
 - Google Scholar, ORCID, and ResearchGate links: please provide the exact profiles; do not rely on name-only search matches.
-- University of Dhaka publication hub: https://du.ac.bd/public/publication/SPL
-- University of Dhaka research details: https://du.ac.bd/public/researchDetails/164
+- University of Dhaka publication hub: https://du.ac.bd/publication/SPL
+- University of Dhaka research details: https://du.ac.bd/researchDetails/164

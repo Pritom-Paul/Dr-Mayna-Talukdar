@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://username.github.io',
-	base: '/dr-mayna-portfolio',
+	// Vercel serves this static site from the deployment root.
+	base: '/',
 	vite: {
 		plugins: [tailwindcss()],
 	},

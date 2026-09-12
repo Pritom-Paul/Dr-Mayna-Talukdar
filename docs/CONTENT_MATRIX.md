@@ -26,7 +26,7 @@ This matrix is the pre-implementation inventory. Every item rendered in the webs
 | Official email and office contact | Contact | Public institutional contact | Official DU profile preferred |
 | Personal email, mobile, home address | Contact | Exclude by default | Include only by explicit instruction |
 | Birth, religion, marital, family details | Nowhere by default | Exclude from public portfolio | Sensitive personal information |
-| Portrait and logos | Hero/footer | Add when supplied or approved | User-provided assets and permissions |
+| Portrait and logos | Hero/header | Supplied portrait plus official DU wordmark; no separate Sanskrit logo found | User-provided portrait; DU asset from official university website |
 
 ## Link search protocol
 

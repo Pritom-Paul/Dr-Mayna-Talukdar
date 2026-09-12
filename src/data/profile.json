@@ -9,9 +9,9 @@
     "institution": "University of Dhaka",
     "institutionBn": "ঢাকা বিশ্ববিদ্যালয়",
     "portrait": {
-      "src": null,
+      "src": "images/dr-mayna-talukdar-portrait.jpeg",
       "alt": { "en": "Portrait of Dr. Mayna Talukdar", "bn": "ড. ময়না তালুকদারের ছবি" },
-      "credit": ""
+      "credit": "Portrait supplied by the site owner"
     },
     "shortBio": {
       "en": "Professor of Sanskrit at the University of Dhaka whose work brings Sanskrit drama, manuscript studies, Bengali–Sanskrit literary comparison, and the study of cultural traditions into conversation.",
@@ -150,7 +150,7 @@
       { "title": "Sanskrit practice of Vidyasagara and its Relevancy", "year": "2016", "journal": "University of Dhaka Arts Faculty Journal", "volumeIssuePages": "Vol. 8, No. 10–11, pp. 57–71, July 2014 to June 2016", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
       { "title": "A Study on the Iconographical Similarity between the Gods and Goddesses of Hindus and Buddhists of Japan: A case Study", "year": "2022", "journal": "Journal of Japanese Studies: Exploring Multidisciplinary, Department of Japanese Studies, University of Dhaka", "volumeIssuePages": "Vol. 1, No. 1, pp. 356–375, January", "language": "English", "doi": "10.55156/jjsem.dec2119", "url": "https://djs.du.ac.bd/?p=2979", "linkType": "Official article page", "downloadUrl": null, "source": "Detailed CV and official University of Dhaka Japanese Studies page", "verified": true },
       { "title": "Resemblances of the Hindu Gods and Goddesses in the Japanese Buddhist Pantheon", "year": "2022", "journal": "A Research Journal, Issues and Discourses around Liberal Arts and Humanities, Faculty of Arts, University of Rajshahi", "volumeIssuePages": "Special Volume 4, 2nd International Conference, pp. 549–556", "language": "English", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024) and University of Dhaka annual report", "verified": true },
-      { "title": "A Study on the Sanskrit Literature of Mughal Period: A Window Pointing View", "year": "2022", "journal": "The Dhaka University Studies, University of Dhaka", "volumeIssuePages": "Vol. 79, No. 1–2, pp. 7–20; published in 2023", "language": "English", "doi": null, "url": "https://du.ac.bd/public/researchDetails/164", "linkType": "University of Dhaka research record", "downloadUrl": null, "source": "Detailed CV and official University of Dhaka research record", "verified": true },
+      { "title": "A Study on the Sanskrit Literature of Mughal Period: A Window Pointing View", "year": "2022", "journal": "The Dhaka University Studies, University of Dhaka", "volumeIssuePages": "Vol. 79, No. 1–2, pp. 7–20; published in 2023", "language": "English", "doi": null, "url": "https://du.ac.bd/researchDetails/164", "linkType": "University of Dhaka research record", "downloadUrl": null, "source": "Detailed CV and official University of Dhaka research record", "verified": true },
       { "title": "Chanakya’s Precepts for an Ideal Life", "year": "2025", "journal": "Sahittya Patrika, Department of Bangla, University of Dhaka", "volumeIssuePages": "Vol. 60, No. 1–2, pp. 23–33, February", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true }
     ],
     "additionalVerifiedRecords": [
@@ -159,9 +159,9 @@
     ]
   },
   "links": {
-    "university": "https://du.ac.bd/public/faculty/faculty_details/SPL/1204",
-    "publicationHub": "https://du.ac.bd/public/publication/SPL",
-    "researchRecord": "https://du.ac.bd/public/researchDetails/164",
+    "university": "https://du.ac.bd/faculty/faculty_details/SPL/1204",
+    "publicationHub": "https://du.ac.bd/publication/SPL",
+    "researchRecord": "https://du.ac.bd/researchDetails/164",
     "googleScholar": null,
     "orcid": null,
     "researchGate": null
@@ -170,7 +170,7 @@
     "email": "drmaynatd@du.ac.bd",
     "address": "Department of Sanskrit, Faculty of Arts, University of Dhaka, Dhaka-1000, Bangladesh",
     "phone": "+88 09666 911 463 (Ext. 6165 / 6166)",
-    "contactUrl": "https://du.ac.bd/public/faculty/faculty_details/SPL/1204"
+    "contactUrl": "https://du.ac.bd/faculty/faculty_details/SPL/1204"
   },
   "sourcePolicy": {
     "primary": "Detailed CV — Curriculam vitae_Dr. Mayna. Update. (20 05. 24).docx",
@@ -189,7 +189,7 @@
       "contact": "Official University of Dhaka faculty profile"
     },
     "webSources": [
-      "https://du.ac.bd/public/faculty/faculty_details/SPL/1204",
+      "https://du.ac.bd/faculty/faculty_details/SPL/1204",
       "https://djs.du.ac.bd/?p=2979",
       "https://journal.bangla.du.ac.bd/article/view/224",
       "https://www.du.ac.bd/fontView/assets/English_Annual_Report-2020-2021.pdf"
