@@ -1,0 +1,21 @@
+---
+import LanguageText from './LanguageText.astro';
+import SectionHeading from './SectionHeading.astro';
+import profile from '../data/profile.json';
+---
+
+<section id="contact" class="section section-alt">
+	<div class="shell contact-wrap">
+		<div>
+			<SectionHeading eyebrow={{ en: 'Contact', bn: 'যোগাযোগ' }} title={{ en: 'For conversation, teaching, and research.', bn: 'আলাপ, শিক্ষাদান ও গবেষণার জন্য।' }} description={{ en: 'For academic correspondence, please use the institutional contact details below.', bn: 'একাডেমিক যোগাযোগের জন্য নিচের প্রাতিষ্ঠানিক যোগাযোগের তথ্য ব্যবহার করুন।' }} />
+			<a class="button-primary" href={`mailto:${profile.contact.email}`}><LanguageText en="Email Dr. Talukdar" bn="ড. তালুকদারকে ইমেইল করুন" /> <span aria-hidden="true">↗</span></a>
+		</div>
+		<div class="contact-card">
+			<h3><LanguageText en="Department of Sanskrit" bn="সংস্কৃত বিভাগ" /></h3>
+			<p><a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a></p>
+			<p>{profile.contact.address}</p>
+			<p>{profile.contact.phone}</p>
+			<p><a href={profile.contact.contactUrl} target="_blank" rel="noreferrer"><LanguageText en="Open official faculty profile ↗" bn="অফিশিয়াল ফ্যাকাল্টি প্রোফাইল খুলুন ↗" /></a></p>
+		</div>
+	</div>
+</section>

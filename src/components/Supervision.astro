@@ -1,0 +1,25 @@
+---
+import LanguageText from './LanguageText.astro';
+import SectionHeading from './SectionHeading.astro';
+import profile from '../data/profile.json';
+---
+
+<section id="teaching" class="section section-alt">
+	<div class="shell">
+		<SectionHeading eyebrow={{ en: 'Teaching & supervision', bn: 'শিক্ষাদান ও তত্ত্বাবধান' }} title={{ en: 'Guiding the next generation of scholarship.', bn: 'পরবর্তী প্রজন্মের গবেষণাকে পথ দেখানো।' }} description={{ en: 'Teaching, postgraduate supervision, and conversations across institutions form a connected academic practice.', bn: 'শিক্ষাদান, স্নাতকোত্তর গবেষণা তত্ত্বাবধান এবং বিভিন্ন প্রতিষ্ঠানের সঙ্গে একাডেমিক সংযোগ তাঁর কাজের অবিচ্ছেদ্য অংশ।' }} />
+		<div class="stats-grid"><div class="big-stat"><strong>08</strong><span><LanguageText en="M.Phil. scholars completed" bn="সম্পন্ন এম.ফিল. গবেষক" /></span></div><div class="big-stat"><strong>02</strong><span><LanguageText en="Ph.D. scholars completed" bn="সম্পন্ন পিএইচ.ডি. গবেষক" /></span></div></div>
+		<div class="two-col">
+			<div>
+				<h3 class="subheading"><LanguageText {...{ en: 'Teaching areas', bn: 'পাঠদানের ক্ষেত্র' }} /></h3>
+				<div class="tag-list">{profile.teaching.map((item) => <span class="tag"><LanguageText {...item} /></span>)}</div>
+				<h3 class="subheading" style="margin-top: 52px"><LanguageText {...{ en: 'Supervised scholars', bn: 'তত্ত্বাবধানে গবেষক' }} /></h3>
+				<p class="publication-note"><LanguageText {...profile.supervision.notes} /></p>
+				<div class="scholar-grid">{profile.supervision.scholars.map((scholar) => <article class="scholar-card"><small>{scholar.level}</small><h3>{scholar.name}</h3><p>{scholar.title}</p></article>)}</div>
+			</div>
+			<div>
+				<h3 class="subheading"><LanguageText {...{ en: 'Lectures & presentations', bn: 'বক্তৃতা ও উপস্থাপনা' }} /></h3>
+				<div class="talk-list">{profile.lectures.map((talk) => <article class="talk-item"><div><strong>{talk.venue}</strong><span>{talk.location}</span></div>{talk.year && <span class="talk-year">{talk.year}</span>}</article>)}</div>
+			</div>
+		</div>
+	</div>
+</section>

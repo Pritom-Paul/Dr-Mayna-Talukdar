@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+import LanguageText from '../components/LanguageText.astro';
+import ui from '../data/ui.json';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Dr. Mayna Talukdar | Professor of Sanskrit',
+	description = 'Academic portfolio of Dr. Mayna Talukdar, Professor of Sanskrit at the University of Dhaka.',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const navItems = [
+	{ href: `${base}#about`, label: ui.nav.about },
+	{ href: `${base}#research`, label: ui.nav.research },
+	{ href: `${base}#publications`, label: ui.nav.publications },
+	{ href: `${base}#teaching`, label: ui.nav.teaching },
+	{ href: `${base}#service`, label: ui.nav.service },
+	{ href: `${base}#contact`, label: ui.nav.contact },
+];
+---
+
+<!doctype html>
+<html lang="en" data-language="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#1c2857" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="profile" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="author" content="Dr. Mayna Talukdar" />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<link rel="icon" href={`${base}favicon.ico`} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<a class="skip-link" href="#main-content">Skip to content</a>
+		<header class="site-header">
+			<div class="shell header-inner">
+				<a class="brand" href={`${base}#about`} aria-label="Dr. Mayna Talukdar home">
+					<span class="brand-mark" aria-hidden="true">ম</span>
+					<span class="brand-copy"><strong>Mayna Talukdar</strong><small>University of Dhaka</small></span>
+				</a>
+				<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+					<span class="sr-only"><LanguageText {...ui.actions.toggleMenu} /></span>
+					<span aria-hidden="true">☰</span>
+				</button>
+				<nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
+					{navItems.map((item) => <a href={item.href}><LanguageText {...item.label} /></a>)}
+				</nav>
+				<div class="header-actions">
+					<a class="du-link" href="https://du.ac.bd/public/faculty/faculty_details/SPL/1204" target="_blank" rel="noreferrer">
+						<span class="du-seal" aria-hidden="true">DU</span><span class="du-link-label">University profile</span>
+					</a>
+					<button class="language-toggle" type="button" data-language-toggle aria-label="Switch language"><span class="lang-en">বাংলা</span><span class="lang-bn">English</span></button>
+				</div>
+			</div>
+		</header>
+		<main id="main-content"><slot /></main>
+		<footer class="site-footer">
+			<div class="shell footer-inner">
+				<div><p class="footer-kicker">Sanskrit · Literature · Culture</p><p>Academic portfolio of Dr. Mayna Talukdar.</p></div>
+				<a href={`${base}#about`}>Back to top ↑</a>
+			</div>
+		</footer>
+		<script>
+			const root = document.documentElement;
+			const menuButton = document.querySelector('.menu-toggle');
+			const navigation = document.querySelector('#site-navigation');
+			const languageButton = document.querySelector('[data-language-toggle]');
+			const savedLanguage = window.localStorage.getItem('mayna-language');
+			// @ts-ignore Astro treats this inline browser script as JavaScript.
+			const setLanguage = (language) => {
+				root.dataset.language = language;
+				root.lang = language === 'bn' ? 'bn' : 'en';
+				window.localStorage.setItem('mayna-language', language);
+			};
+			if (savedLanguage === 'bn') setLanguage('bn');
+			menuButton?.addEventListener('click', () => {
+				const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+				menuButton.setAttribute('aria-expanded', String(!expanded));
+				navigation?.classList.toggle('is-open', !expanded);
+			});
+			navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+				menuButton?.setAttribute('aria-expanded', 'false');
+				navigation?.classList.remove('is-open');
+			}));
+			languageButton?.addEventListener('click', () => setLanguage(root.dataset.language === 'bn' ? 'en' : 'bn'));
+		</script>
+	</body>
+</html>

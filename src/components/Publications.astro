@@ -1,0 +1,32 @@
+---
+import LanguageText from './LanguageText.astro';
+import SectionHeading from './SectionHeading.astro';
+import profile from '../data/profile.json';
+
+const publicationSource = 'https://du.ac.bd/public/publication/SPL';
+---
+
+<section id="publications" class="section">
+	<div class="shell">
+		<SectionHeading eyebrow={{ en: 'Selected scholarship', bn: 'নির্বাচিত গবেষণা' }} title={{ en: 'A record of research and publication.', bn: 'গবেষণা ও প্রকাশনার ধারাবাহিকতা।' }} description={{ en: 'Research books, educational works, and articles are presented from the supplied CV, with public links shown only where an exact source was found.', bn: 'সরবরাহ করা জীবনবৃত্তান্ত থেকে গবেষণাগ্রন্থ, শিক্ষামূলক কাজ ও প্রবন্ধ উপস্থাপন করা হয়েছে। নির্ভরযোগ্য উৎস পাওয়া গেলেই কেবল প্রকাশ্য লিংক দেওয়া হয়েছে।' }} />
+		<div class="hero-actions" style="margin-top: -16px; margin-bottom: 25px"><a class="button-secondary" href={publicationSource} target="_blank" rel="noreferrer"><LanguageText en="University publication record ↗" bn="বিশ্ববিদ্যালয়ের প্রকাশনা রেকর্ড ↗" /></a></div>
+		<div class="pub-section">
+			<h3><LanguageText {...{ en: 'Research Books', bn: 'গবেষণাগ্রন্থ' }} /> <span class="count">08 listed</span></h3>
+			<div class="publication-list">{profile.publications.books.map((book) => <article class="publication-card"><div class="pub-year">{book.year}</div><div><h3>{book.title}</h3><p>{book.publisher}{book.note && ` · ${book.note}`}</p></div>{book.url && <a href={book.url} target="_blank" rel="noreferrer"><LanguageText en="View source ↗" bn="উৎস দেখুন ↗" /></a>}</article>)}</div>
+		</div>
+		<div class="pub-section">
+			<h3><LanguageText en="Educational & Other Books" bn="শিক্ষামূলক ও অন্যান্য গ্রন্থ" /> <span class="count">04 listed</span></h3>
+			<div class="publication-list">{profile.publications.otherBooks.map((book) => <article class="publication-card"><div class="pub-year">{book.year}</div><div><h3>{book.title}</h3><p>{book.publisher}{book.note && ` · ${book.note}`}</p></div></article>)}</div>
+		</div>
+		<div class="pub-section">
+			<h3><LanguageText en="Research Articles" bn="গবেষণা প্রবন্ধ" /> <span class="count">20 itemized</span></h3>
+			<p class="publication-note"><LanguageText {...profile.publications.articleRecordsInCv === 20 ? { en: `The supplied CV reports ${profile.publications.reportedResearchArticleCount} research articles; ${profile.publications.articleRecordsInCv} article entries are itemized in the document.`, bn: `সরবরাহ করা জীবনবৃত্তান্তে ${profile.publications.reportedResearchArticleCount}টি গবেষণা প্রবন্ধের কথা বলা হয়েছে; নথিতে ${profile.publications.articleRecordsInCv}টি প্রবন্ধের পূর্ণ তালিকা রয়েছে।` } : { en: '', bn: '' }} /></p>
+			<div class="publication-list">{profile.publications.articles.map((article) => <article class="publication-card"><div class="pub-year">{String(article.year).slice(0, 4)}</div><div><h3>{article.title}</h3><p>{article.journal} · {article.volumeIssuePages}{article.doi && ` · DOI: ${article.doi}`}</p></div>{article.url && <a href={article.url} target="_blank" rel="noreferrer"><LanguageText {...(article.linkType === 'Official article page' ? { en: 'Read article ↗', bn: 'প্রবন্ধ পড়ুন ↗' } : { en: 'View source ↗', bn: 'উৎস দেখুন ↗' })} /></a>}</article>)}</div>
+		</div>
+		<div class="pub-section">
+			<h3><LanguageText en="Additional institutional records" bn="অতিরিক্ত প্রাতিষ্ঠানিক রেকর্ড" /></h3>
+			<div class="publication-list">{profile.publications.additionalVerifiedRecords.map((record) => <article class="publication-card"><div class="pub-year">{record.year}</div><div><h3><LanguageText en={record.title} bn={record.titleBn} /></h3><p>{record.journal} · {record.note}</p></div><a href={record.url} target="_blank" rel="noreferrer"><LanguageText en="View report ↗" bn="রিপোর্ট দেখুন ↗" /></a></article>)}</div>
+		</div>
+		<p class="source-note"><LanguageText en="Titles follow the detailed CV. Links are limited to exact public sources found during research; no unverified scholar profile or download link is shown." bn="শিরোনামগুলো বিস্তারিত জীবনবৃত্তান্ত অনুসরণ করে। গবেষণায় পাওয়া নির্ভুল প্রকাশ্য উৎসেই লিংক সীমাবদ্ধ; কোনো অযাচাইকৃত গবেষক-প্রোফাইল বা ডাউনলোড লিংক দেখানো হয়নি।" /></p>
+	</div>
+</section>

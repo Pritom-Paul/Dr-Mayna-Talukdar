@@ -86,7 +86,8 @@ Language behavior:
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
-│   │   └── index.astro
+│   │   ├── index.astro
+│   │   └── 404.astro
 │   └── styles/
 │       └── global.css
 ├── astro.config.mjs
@@ -200,22 +201,32 @@ These sources can be linked from the site, but every additional item found on th
 
 ## 12. Final preflight gate
 
-Before writing production components, confirm that:
+### Content gate completed
 
 - The detailed DOCX is the retained title and citation authority.
 - Every planned section has at least one verified content source or is explicitly marked optional.
-- The 8-versus-9 research-book count and 20-versus-21 article count are resolved.
+- The 8-versus-9 research-book count and 20-versus-21 article count are transparently documented, with no missing records invented.
 - Research-project statuses and current leadership dates are resolved.
 - Personal, family, residential, and non-academic details have an explicit publish/omit decision.
 - Scholar names and thesis titles have an explicit publish/omit decision.
 - Bengali interface copy and any Bengali translations of CV titles are reviewed for accuracy.
 - Each external link is exact, title-matched, and checked for a working destination.
-- The GitHub username, repository name, branch, `site`, and `base` are known.
 - The photo can remain an intentional placeholder until supplied; it must not block layout work.
+
+### Deployment gate still open
+
+- The GitHub username, repository name, branch, final `site`, and `base` must be confirmed before deployment. The requested `base` is already fixed as `/dr-mayna-portfolio`; only the username-dependent `site` value remains a placeholder.
+- Browser-only interaction, contrast, and viewport QA must be run in a local browser because no browser surface is available in this environment.
 
 ## 13. Execution checkpoint
 
-Implementation should begin only after the final preflight gate is satisfied. The photo may be supplied later, but all content, privacy, translation, link, and deployment decisions should be complete first.
+The final content preflight gate is now satisfied. The photo may be supplied later. The only open deployment gate is the replacement of the placeholder GitHub `site` value and the live GitHub Pages/browser verification.
+
+## 14. Implementation status
+
+Completed: Astro/Tailwind foundation, bilingual layout and toggle, responsive sections, verified CV data, publication/source-link handling, GitHub Pages workflow, README, type check, static build, generated-output inspection, external-link validation, content audit, and static accessibility/output audit.
+
+Remaining: replace the placeholder GitHub `site` value, optionally add the portrait and approved logos, complete browser-based keyboard/contrast/responsive QA locally, and run the GitHub Actions deployment after the repository is configured for Pages. A static base-aware 404 page is now implemented.
 
 ## References consulted
 

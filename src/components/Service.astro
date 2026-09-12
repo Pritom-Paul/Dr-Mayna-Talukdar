@@ -1,0 +1,23 @@
+---
+import LanguageText from './LanguageText.astro';
+import SectionHeading from './SectionHeading.astro';
+import profile from '../data/profile.json';
+---
+
+<section id="service" class="section">
+	<div class="shell">
+		<div class="two-col">
+			<div>
+				<SectionHeading eyebrow={{ en: 'Academic service', bn: 'একাডেমিক সেবা' }} title={{ en: 'Scholarship in the world.', bn: 'সমাজের সঙ্গে যুক্ত একাডেমিকতা।' }} description={{ en: 'Professional memberships, editorial work, curriculum contributions, and public-facing leadership extend the work beyond the classroom.', bn: 'পেশাগত সদস্যপদ, সম্পাদনা, শিক্ষাক্রমে অবদান এবং জনসম্পৃক্ত নেতৃত্ব শ্রেণিকক্ষের বাইরেও তাঁর কাজকে বিস্তৃত করেছে।' }} />
+				<div class="service-list">{profile.service.map((item) => <article class="service-card"><h3><LanguageText en={item.role} bn={item.roleBn} /></h3><p>{item.period}</p></article>)}</div>
+			</div>
+			<div>
+				<h3 class="subheading"><LanguageText en="Recognition" bn="স্বীকৃতি" /></h3>
+				{profile.awards.map((award) => <article class="service-card"><h3><LanguageText en={award.title} bn={award.titleBn} /></h3><p>{award.year} · {award.country}</p></article>)}
+				<h3 class="subheading" style="margin-top: 52px"><LanguageText en="Research interests" bn="গবেষণার আগ্রহ" /></h3>
+				<p class="body-copy"><LanguageText {...profile.research.statement} /></p>
+				<div class="tag-list">{profile.research.keywords.map((keyword) => <span class="tag">{keyword}</span>)}</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,27 @@
+---
+import LanguageText from './LanguageText.astro';
+import SectionHeading from './SectionHeading.astro';
+import profile from '../data/profile.json';
+
+const statusLabels = {
+	Ongoing: { en: 'Ongoing', bn: 'চলমান' },
+	Completed: { en: 'Completed', bn: 'সম্পন্ন' },
+};
+---
+
+<section id="research" class="section section-alt">
+	<div class="shell">
+		<SectionHeading eyebrow={{ en: 'Research & projects', bn: 'গবেষণা ও প্রকল্প' }} title={{ en: 'Classical texts, living questions.', bn: 'ধ্রুপদি পাঠ, জীবন্ত প্রশ্ন।' }} description={profile.research.statement} />
+		<div class="tag-list" aria-label="Research specializations">
+			{profile.research.specializations.map((tag) => <span class="tag"><LanguageText {...tag} /></span>)}
+		</div>
+		<div class="project-grid" style="margin-top: 34px">
+			{profile.projects.map((project) => <article class="project-card">
+				<div class="card-topline"><span>{project.period}</span><span class:list={['status', { completed: project.status === 'Completed' }]}><LanguageText {...statusLabels[project.status as keyof typeof statusLabels]} /></span></div>
+				<h3><LanguageText en={project.title} bn={project.titleBn} /></h3>
+				<p><LanguageText {...project.description} /></p>
+				<span class="project-funder">{project.funder}</span>
+			</article>)}
+		</div>
+	</div>
+</section>

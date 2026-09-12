@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "about": { "en": "About", "bn": "পরিচিতি" },
+    "research": { "en": "Research & Projects", "bn": "গবেষণা ও প্রকল্প" },
+    "publications": { "en": "Publications", "bn": "প্রকাশনা" },
+    "teaching": { "en": "Teaching & Supervision", "bn": "শিক্ষাদান ও তত্ত্বাবধান" },
+    "service": { "en": "Academic Service", "bn": "একাডেমিক সেবা" },
+    "contact": { "en": "Contact", "bn": "যোগাযোগ" }
+  },
+  "actions": {
+    "viewProfile": { "en": "View University profile", "bn": "বিশ্ববিদ্যালয় প্রোফাইল দেখুন" },
+    "viewSource": { "en": "View source", "bn": "উৎস দেখুন" },
+    "readArticle": { "en": "Read article", "bn": "প্রবন্ধ পড়ুন" },
+    "email": { "en": "Email Dr. Talukdar", "bn": "ড. তালুকদারকে ইমেইল করুন" },
+    "toggleMenu": { "en": "Toggle navigation", "bn": "নেভিগেশন টগল করুন" },
+    "switchLanguage": { "en": "বাংলা", "bn": "English" }
+  },
+  "labels": {
+    "professor": { "en": "Professor", "bn": "অধ্যাপক" },
+    "department": { "en": "Department of Sanskrit", "bn": "সংস্কৃত বিভাগ" },
+    "university": { "en": "University of Dhaka", "bn": "ঢাকা বিশ্ববিদ্যালয়" },
+    "researchBooks": { "en": "Research Books", "bn": "গবেষণাগ্রন্থ" },
+    "otherBooks": { "en": "Educational & Other Books", "bn": "শিক্ষামূলক ও অন্যান্য গ্রন্থ" },
+    "researchArticles": { "en": "Research Articles", "bn": "গবেষণা প্রবন্ধ" },
+    "verifiedRecord": { "en": "Verified record", "bn": "যাচাইকৃত তথ্য" },
+    "ongoing": { "en": "Ongoing", "bn": "চলমান" },
+    "completed": { "en": "Completed", "bn": "সম্পন্ন" },
+    "formerChair": { "en": "Former Chairperson", "bn": "সাবেক চেয়ারপারসন" },
+    "researchFocus": { "en": "Research focus", "bn": "গবেষণার ক্ষেত্র" },
+    "education": { "en": "Education", "bn": "শিক্ষাজীবন" },
+    "experience": { "en": "Academic appointments", "bn": "একাডেমিক পদসমূহ" },
+    "fellowship": { "en": "Fellowship", "bn": "ফেলোশিপ" },
+    "talks": { "en": "Lectures & presentations", "bn": "বক্তৃতা ও উপস্থাপনা" },
+    "memberships": { "en": "Memberships & leadership", "bn": "সদস্যপদ ও নেতৃত্ব" },
+    "courses": { "en": "Teaching areas", "bn": "পাঠদানের ক্ষেত্র" },
+    "scholars": { "en": "Supervised scholars", "bn": "তত্ত্বাবধানে গবেষক" },
+    "sourceNote": { "en": "Titles and citation wording follow the detailed CV. Links appear only when an exact public source was found.", "bn": "শিরোনাম ও উদ্ধৃতির ভাষা বিস্তারিত জীবনবৃত্তান্ত অনুসরণ করে। নির্ভরযোগ্য প্রকাশ্য উৎস পাওয়া গেলেই কেবল লিংক দেওয়া হয়েছে।" },
+    "reportedCountNote": { "en": "The CV reports 21 research articles; 20 article entries are itemized in the supplied document.", "bn": "জীবনবৃত্তান্তে ২১টি গবেষণা প্রবন্ধের কথা বলা হয়েছে; সরবরাহ করা নথিতে ২০টি প্রবন্ধের পূর্ণ তালিকা রয়েছে।" },
+    "photoPlaceholder": { "en": "Portrait to be supplied", "bn": "ছবি পরে যুক্ত হবে" }
+  }
+}

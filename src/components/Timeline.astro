@@ -1,0 +1,21 @@
+---
+import LanguageText from './LanguageText.astro';
+import SectionHeading from './SectionHeading.astro';
+import profile from '../data/profile.json';
+---
+
+<section id="timeline" class="section">
+	<div class="shell">
+		<div class="two-col">
+			<div>
+				<SectionHeading eyebrow={{ en: 'Academic journey', bn: 'একাডেমিক যাত্রা' }} title={{ en: 'A career shaped by teaching.', bn: 'শিক্ষতার মধ্য দিয়ে গড়ে ওঠা এক পথচলা।' }} description={{ en: 'From early teaching appointments to professorship at the University of Dhaka.', bn: 'প্রাথমিক শিক্ষকতা থেকে ঢাকা বিশ্ববিদ্যালয়ে অধ্যাপনা পর্যন্ত।' }} />
+				<div class="timeline">{profile.appointments.map((item) => <article class="timeline-item"><span class="timeline-date">{item.from} — {item.to}</span><h3><LanguageText en={item.role} bn={item.roleBn} /></h3><p><LanguageText en={item.institution} bn={item.institutionBn} /></p></article>)}</div>
+			</div>
+			<div>
+				<h3 class="subheading"><LanguageText en="Education" bn="শিক্ষাজীবন" /></h3>
+				<div class="publication-list">{profile.education.map((item) => <article class="publication-card"><div class="pub-year">{item.year}</div><div><h3><LanguageText en={item.degree} bn={item.degreeBn} /></h3>{item.subject && <p><LanguageText en={item.subject} bn={item.subjectBn} />{item.note && ` · ${item.note}`}</p>}<p><LanguageText en={item.institution} bn="ঢাকা বিশ্ববিদ্যালয়" /></p></div></article>)}</div>
+				<div style="margin-top: 52px"><h3 class="subheading"><LanguageText en="Research fellowship" bn="গবেষণা ফেলোশিপ" /></h3>{profile.fellowships.map((item) => <article class="service-card"><h3><LanguageText en={item.award} bn={item.awardBn} /></h3><p><LanguageText en={item.host} bn={item.hostBn} /></p><p style="margin-top: 9px"><LanguageText {...item.description} /></p></article>)}</div>
+			</div>
+		</div>
+	</div>
+</section>
