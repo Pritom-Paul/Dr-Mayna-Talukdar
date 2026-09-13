@@ -14,7 +14,7 @@ if (html.includes('/Dr-Mayna-Talukdar/')) fail('old GitHub Pages base path still
 for (const landmark of ['<header', '<nav', '<main id="main-content"', '<footer']) {
 	if (!html.includes(landmark)) fail(`missing landmark: ${landmark}`);
 }
-for (const required of ['data-language="en"', 'data-theme="light"', 'data-language-toggle', 'data-theme-toggle', 'aria-controls="site-navigation"', 'class="lang-en"', 'class="lang-bn"']) {
+for (const required of ['data-language="en"', 'data-theme="light"', 'data-language-toggle', 'aria-pressed="false"', 'data-theme-toggle', 'data-nav-target="about"', 'aria-current="location"', 'aria-controls="site-navigation"', 'class="lang-en"', 'class="lang-bn"']) {
 	if (!html.includes(required)) fail(`missing bilingual/navigation hook: ${required}`);
 }
 
@@ -30,6 +30,8 @@ if (!css.includes(':focus-visible')) fail('visible focus style missing');
 if (!css.includes('prefers-reduced-motion')) fail('reduced-motion support missing');
 if (!/data-theme=(?:['"])?dark/.test(css)) fail('dark theme styles missing');
 if (!css.includes('Noto Sans Bengali')) fail('Bengali-capable font missing');
+if (!/\.lang-bn(?:,html\[data-language=bn\] \.lang-en)?\{display:none!important\}/.test(css) || !css.includes('html[data-language=bn] .lang-bn{display:inline!important}')) fail('language visibility rules are not protected from component display styles');
+if (!css.includes('.site-nav a[aria-current=location]')) fail('active navigation style missing');
 
 console.log('STATIC AUDIT PASSED');
 console.log('Landmarks, heading structure, base-aware URLs, bilingual hooks, link safety, responsive CSS, focus styles, and reduced-motion support verified.');

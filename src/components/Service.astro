@@ -16,7 +16,7 @@ import profile from '../data/profile.json';
 				{profile.awards.map((award) => <article class="service-card"><h3><LanguageText en={award.title} bn={award.titleBn} /></h3><p>{award.year} · {award.country}</p></article>)}
 				<h3 class="subheading" style="margin-top: 52px"><LanguageText en="Research interests" bn="গবেষণার আগ্রহ" /></h3>
 				<p class="body-copy"><LanguageText {...profile.research.statement} /></p>
-				<div class="tag-list">{profile.research.keywords.map((keyword) => <span class="tag">{keyword}</span>)}</div>
+				<div class="tag-list">{profile.research.specializations.map((keyword) => <span class="tag"><LanguageText {...keyword} /></span>)}</div>
 			</div>
 		</div>
 	</div>

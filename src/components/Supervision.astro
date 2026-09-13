@@ -2,6 +2,7 @@
 import LanguageText from './LanguageText.astro';
 import SectionHeading from './SectionHeading.astro';
 import profile from '../data/profile.json';
+import ui from '../data/ui.json';
 ---
 
 <section id="teaching" class="section section-alt">
@@ -17,7 +18,7 @@ import profile from '../data/profile.json';
 				<div class="scholar-grid">{profile.supervision.scholars.map((scholar) => <article class="scholar-card"><small>{scholar.level}</small><h3>{scholar.name}</h3><p>{scholar.title}</p></article>)}</div>
 			</div>
 			<div>
-				<h3 class="subheading"><LanguageText {...{ en: 'Lectures & presentations', bn: 'বক্তৃতা ও উপস্থাপনা' }} /></h3>
+				<h3 class="subheading"><LanguageText {...ui.labels.talks} /></h3>
 				<div class="talk-list">{profile.lectures.map((talk) => <article class="talk-item"><div><strong>{talk.venue}</strong><span>{talk.location}</span></div>{talk.year && <span class="talk-year">{talk.year}</span>}</article>)}</div>
 			</div>
 		</div>

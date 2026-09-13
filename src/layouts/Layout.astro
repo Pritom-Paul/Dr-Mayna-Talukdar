@@ -15,12 +15,12 @@ const {
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const navItems = [
-	{ href: `${base}#about`, label: ui.nav.about },
-	{ href: `${base}#research`, label: ui.nav.research },
-	{ href: `${base}#publications`, label: ui.nav.publications },
-	{ href: `${base}#teaching`, label: ui.nav.teaching },
-	{ href: `${base}#service`, label: ui.nav.service },
-	{ href: `${base}#contact`, label: ui.nav.contact },
+	{ id: 'about', href: `${base}#about`, label: ui.nav.about },
+	{ id: 'research', href: `${base}#research`, label: ui.nav.research },
+	{ id: 'publications', href: `${base}#publications`, label: ui.nav.publications },
+	{ id: 'teaching', href: `${base}#teaching`, label: ui.nav.teaching },
+	{ id: 'service', href: `${base}#service`, label: ui.nav.service },
+	{ id: 'contact', href: `${base}#contact`, label: ui.nav.contact },
 ];
 ---
 
@@ -63,16 +63,16 @@ const navItems = [
 					<span aria-hidden="true">☰</span>
 				</button>
 				<nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
-					{navItems.map((item) => <a href={item.href}><LanguageText {...item.label} /></a>)}
+					{navItems.map((item) => <a href={item.href} data-nav-target={item.id} aria-current={item.id === 'about' ? 'location' : undefined}><LanguageText {...item.label} /></a>)}
 				</nav>
 				<div class="header-actions">
-					<a class="du-link" href="https://du.ac.bd/faculty/faculty_details/SPL/1204" target="_blank" rel="noreferrer">
-						<span class="du-logo-frame"><img class="du-logo" src={`${base}images/university-of-dhaka-logo.png`} alt="University of Dhaka logo" /></span><span class="du-link-label">University profile</span>
+					<a class="du-link" href="https://du.ac.bd/faculty/faculty_details/SPL/1204" target="_blank" rel="noreferrer" aria-label="University of Dhaka faculty profile" title="University of Dhaka faculty profile">
+						<span class="du-logo-frame"><img class="du-logo du-logo-white" src={`${base}images/university-of-dhaka-logo.png`} alt="University of Dhaka logo" /><img class="du-logo du-logo-shield" src={`${base}images/university-of-dhaka-logo.png`} alt="" aria-hidden="true" /></span>
 					</a>
 					<button class="theme-toggle" type="button" data-theme-toggle title="Change theme">
 						<span data-theme-icon aria-hidden="true">☾</span><span class="sr-only"><LanguageText {...ui.actions.switchTheme} /></span>
 					</button>
-					<button class="language-toggle" type="button" data-language-toggle aria-label="Switch language"><span class="lang-en">বাংলা</span><span class="lang-bn">English</span></button>
+					<button class="language-toggle" type="button" data-language-toggle aria-label="Switch to Bengali" aria-pressed="false"><span class="lang-en">বাংলা</span><span class="lang-bn">English</span></button>
 				</div>
 			</div>
 		</header>
@@ -90,7 +90,18 @@ const navItems = [
 			const languageButton = document.querySelector('[data-language-toggle]');
 			const themeButton = document.querySelector('[data-theme-toggle]');
 			const themeIcon = document.querySelector('[data-theme-icon]');
+			const navLinks = [...document.querySelectorAll('[data-nav-target]')];
+			const navSections = navLinks
+				.map((link) => document.getElementById(link.getAttribute('data-nav-target') ?? ''))
+				.filter((section): section is HTMLElement => Boolean(section));
 			const savedLanguage = window.localStorage.getItem('mayna-language');
+			const updateLanguageButton = () => {
+				const bengali = root.dataset.language === 'bn';
+				const label = bengali ? 'Switch to English' : 'বাংলায় পরিবর্তন করুন';
+				languageButton?.setAttribute('aria-label', label);
+				languageButton?.setAttribute('title', label);
+				languageButton?.setAttribute('aria-pressed', String(bengali));
+			};
 			// @ts-ignore Astro treats this inline browser script as JavaScript.
 			const updateThemeButton = () => {
 				const dark = root.dataset.theme === 'dark';
@@ -110,9 +121,55 @@ const navItems = [
 				root.dataset.language = language;
 				root.lang = language === 'bn' ? 'bn' : 'en';
 				window.localStorage.setItem('mayna-language', language);
+				updateLanguageButton();
 				updateThemeButton();
 			};
+			const setActiveNav = (id: string) => {
+				navLinks.forEach((link) => {
+					if (link.getAttribute('data-nav-target') === id) link.setAttribute('aria-current', 'location');
+					else link.removeAttribute('aria-current');
+				});
+			};
+			let lockedNavTarget: string | null = null;
+			let navUnlockTimer: number | undefined;
+			const releaseNavLock = () => {
+				if (!lockedNavTarget) return;
+				const target = lockedNavTarget;
+				lockedNavTarget = null;
+				if (navUnlockTimer !== undefined) window.clearTimeout(navUnlockTimer);
+				setActiveNav(target);
+			};
+			const lockNavTarget = (target: string) => {
+				lockedNavTarget = target;
+				if (navUnlockTimer !== undefined) window.clearTimeout(navUnlockTimer);
+				navUnlockTimer = window.setTimeout(releaseNavLock, 1400);
+			};
+			window.addEventListener('scrollend', releaseNavLock);
+			const initialSection = window.location.hash.slice(1);
+			setActiveNav(navSections.some((section) => section.id === initialSection) ? initialSection : 'about');
+			const updateActiveNavFromScroll = () => {
+				if (lockedNavTarget || navSections.length === 0) return;
+				const atPageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+				if (atPageBottom) {
+					setActiveNav(navSections[navSections.length - 1].id);
+					return;
+				}
+				const activationLine = window.innerHeight * 0.35;
+				const currentSection = navSections.reduce((active, section) => section.getBoundingClientRect().top <= activationLine ? section : active, navSections[0]);
+				setActiveNav(currentSection.id);
+			};
+			let scrollFrame: number | undefined;
+			const scheduleActiveNavUpdate = () => {
+				if (scrollFrame !== undefined) return;
+				scrollFrame = window.requestAnimationFrame(() => {
+					scrollFrame = undefined;
+					updateActiveNavFromScroll();
+				});
+			};
+			window.addEventListener('scroll', scheduleActiveNavUpdate, { passive: true });
+			window.addEventListener('resize', scheduleActiveNavUpdate);
 			if (savedLanguage === 'bn') setLanguage('bn');
+			else updateLanguageButton();
 			updateThemeButton();
 			menuButton?.addEventListener('click', () => {
 				const expanded = menuButton.getAttribute('aria-expanded') === 'true';
@@ -120,9 +177,18 @@ const navItems = [
 				navigation?.classList.toggle('is-open', !expanded);
 			});
 			navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+				const target = link.getAttribute('data-nav-target');
+				if (target) {
+					setActiveNav(target);
+					lockNavTarget(target);
+				}
 				menuButton?.setAttribute('aria-expanded', 'false');
 				navigation?.classList.remove('is-open');
 			}));
+			window.addEventListener('hashchange', () => {
+				const target = window.location.hash.slice(1);
+				if (target) setActiveNav(target);
+			});
 			themeButton?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 			languageButton?.addEventListener('click', () => setLanguage(root.dataset.language === 'bn' ? 'en' : 'bn'));
 		</script>

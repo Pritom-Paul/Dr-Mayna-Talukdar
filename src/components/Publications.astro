@@ -23,10 +23,5 @@ const publicationSource = 'https://du.ac.bd/publication/SPL';
 			<p class="publication-note"><LanguageText {...profile.publications.articleRecordsInCv === 20 ? { en: `The supplied CV reports ${profile.publications.reportedResearchArticleCount} research articles; ${profile.publications.articleRecordsInCv} article entries are itemized in the document.`, bn: `সরবরাহ করা জীবনবৃত্তান্তে ${profile.publications.reportedResearchArticleCount}টি গবেষণা প্রবন্ধের কথা বলা হয়েছে; নথিতে ${profile.publications.articleRecordsInCv}টি প্রবন্ধের পূর্ণ তালিকা রয়েছে।` } : { en: '', bn: '' }} /></p>
 			<div class="publication-list">{profile.publications.articles.map((article) => <article class="publication-card"><div class="pub-year">{String(article.year).slice(0, 4)}</div><div><h3>{article.title}</h3><p>{article.journal} · {article.volumeIssuePages}{article.doi && ` · DOI: ${article.doi}`}</p></div>{article.url && <a href={article.url} target="_blank" rel="noreferrer"><LanguageText {...(article.linkType === 'Official article page' ? { en: 'Read article ↗', bn: 'প্রবন্ধ পড়ুন ↗' } : { en: 'View source ↗', bn: 'উৎস দেখুন ↗' })} /></a>}</article>)}</div>
 		</div>
-		<div class="pub-section">
-			<h3><LanguageText en="Additional institutional records" bn="অতিরিক্ত প্রাতিষ্ঠানিক রেকর্ড" /></h3>
-			<div class="publication-list">{profile.publications.additionalVerifiedRecords.map((record) => <article class="publication-card"><div class="pub-year">{record.year}</div><div><h3><LanguageText en={record.title} bn={record.titleBn} /></h3><p>{record.journal} · {record.note}</p></div><a href={record.url} target="_blank" rel="noreferrer"><LanguageText en="View report ↗" bn="রিপোর্ট দেখুন ↗" /></a></article>)}</div>
-		</div>
-		<p class="source-note"><LanguageText en="Titles follow the detailed CV. Links are limited to exact public sources found during research; no unverified scholar profile or download link is shown." bn="শিরোনামগুলো বিস্তারিত জীবনবৃত্তান্ত অনুসরণ করে। গবেষণায় পাওয়া নির্ভুল প্রকাশ্য উৎসেই লিংক সীমাবদ্ধ; কোনো অযাচাইকৃত গবেষক-প্রোফাইল বা ডাউনলোড লিংক দেখানো হয়নি।" /></p>
 	</div>
 </section>

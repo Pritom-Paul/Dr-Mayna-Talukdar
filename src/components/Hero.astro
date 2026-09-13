@@ -12,16 +12,12 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 			<p class="eyebrow"><LanguageText en="Sanskrit · Literature · Culture" bn="সংস্কৃত · সাহিত্য · সংস্কৃতি" /></p>
 			<h1><LanguageText en={profile.identity.name} bn={profile.identity.nameBn} /></h1>
 			<p class="hero-lead"><LanguageText {...profile.identity.shortBio} /></p>
-			<div class="hero-actions">
-				<a class="button-primary" href={`${base}#publications`}><LanguageText en="Explore scholarship" bn="গবেষণা দেখুন" /> <span aria-hidden="true">↗</span></a>
-				<a class="button-secondary" href={`${base}#contact`}><LanguageText {...ui.actions.email} /></a>
-			</div>
 			<p class="hero-footnote"><LanguageText en="Professor & former Chairperson · Department of Sanskrit · University of Dhaka" bn="অধ্যাপক ও সাবেক চেয়ারপারসন · সংস্কৃত বিভাগ · ঢাকা বিশ্ববিদ্যালয়" /></p>
 		</div>
 		<div class="hero-panel" aria-label="Academic profile">
 			{profile.identity.portrait.src ? <img class="portrait-image" src={`${base}${profile.identity.portrait.src}`} alt={profile.identity.portrait.alt.en} /> : <div class="portrait-placeholder"><span aria-hidden="true">ম</span><p class="portrait-label"><LanguageText {...ui.labels.photoPlaceholder} /></p></div>}
 			<div class="hero-meta"><strong><LanguageText {...profile.identity.title ? { en: profile.identity.title, bn: profile.identity.titleBn } : ui.labels.professor} /></strong><span><LanguageText {...profile.identity.department ? { en: profile.identity.department, bn: profile.identity.departmentBn } : ui.labels.department} /></span><span><LanguageText {...profile.identity.institution ? { en: profile.identity.institution, bn: profile.identity.institutionBn } : ui.labels.university} /></span></div>
-			<div class="stat-row"><div><strong>8</strong><span><LanguageText en="M.Phil scholars" bn="এম.ফিল. গবেষক" /></span></div><div><strong>02</strong><span><LanguageText en="Ph.D. scholars" bn="পিএইচ.ডি. গবেষক" /></span></div><div><strong>1993</strong><span><LanguageText en="Teaching since" bn="শিক্ষতা শুরু" /></span></div></div>
+			<div class="stat-row"><div><strong>08</strong><span><LanguageText en="M.Phil. scholars" bn="এম.ফিল. গবেষক" /></span></div><div><strong>02</strong><span><LanguageText en="Ph.D. scholars" bn="পিএইচ.ডি. গবেষক" /></span></div><div><strong>1993</strong><span><LanguageText en="Teaching since" bn="শিক্ষতা শুরু" /></span></div></div>
 		</div>
 	</div>
 </section>
