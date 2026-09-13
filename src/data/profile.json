@@ -52,7 +52,7 @@
     { "role": "Chairperson, Department of Sanskrit", "roleBn": "চেয়ারপারসন, সংস্কৃত বিভাগ", "institution": "University of Dhaka", "institutionBn": "ঢাকা বিশ্ববিদ্যালয়", "from": "10 Jan 2022", "to": "09 Jan 2025", "source": "Official University of Dhaka faculty profile" }
   ],
   "fellowships": [
-    { "award": "Numata Fellowship for Post-Doctoral Research", "awardBn": "পোস্ট-ডক্টরাল গবেষণার জন্য নুমাটা ফেলোশিপ", "host": "Kyoto, Japan", "hostBn": "কিয়োটো, জাপান", "period": "", "description": { "en": "Research fellowship recorded in the detailed CV and corroborated by public academic material.", "bn": "বিস্তারিত জীবনবৃত্তান্তে উল্লিখিত এবং প্রকাশ্য একাডেমিক নথিতে সমর্থিত গবেষণা ফেলোশিপ।" } }
+    { "award": "Numata Fellowship for Post-Doctoral Research", "awardBn": "পোস্ট-ডক্টরাল গবেষণার জন্য নুমাটা ফেলোশিপ", "host": "Kyoto, Japan", "hostBn": "কিয়োটো, জাপান", "period": "", "description": { "en": "Post-doctoral research fellowship in Kyoto, Japan.", "bn": "কিয়োটো, জাপানে পোস্ট-ডক্টরাল গবেষণা ফেলোশিপ।" } }
   ],
   "teaching": [
     { "en": "History of Sanskrit Literature", "bn": "সংস্কৃত সাহিত্যের ইতিহাস" },
@@ -65,8 +65,8 @@
   ],
   "projects": [
     { "title": "Chanakya-Saptati (Decipher, Edited and Translation)", "titleBn": "চাণক্য-সপ্ততি (পাঠোদ্ধার, সম্পাদনা ও অনুবাদ)", "period": "2021–2022", "status": "Completed", "funder": "Bangladesh University Grants Commission Research Project", "description": { "en": "A text-critical and translation project centered on Chanakya-Saptati.", "bn": "চাণক্য-সপ্ততি-কে কেন্দ্র করে পাঠসমালোচনা, সম্পাদনা ও অনুবাদ প্রকল্প।" }, "url": null, "source": "Detailed CV (May 2024)", "verified": true },
-    { "title": "Amarusatakam: An Analysis on the Diversity of Subject and Forms", "titleBn": "অমরুশতকম্: বিষয় ও রূপের বৈচিত্র্যের বিশ্লেষণ", "period": "2023–2024", "status": "Ongoing", "funder": "Bangladesh University Grants Commission Research Project", "description": { "en": "A study of diversity in subject and form in Amarusatakam.", "bn": "অমরুশতকম্-এ বিষয় ও রূপের বৈচিত্র্যের অধ্যয়ন।" }, "url": null, "source": "Detailed CV (May 2024)", "verified": true },
-    { "title": "Contributions of Maithili Poets in Sanskrit Literature", "titleBn": "সংস্কৃত সাহিত্যে মৈথিলি কবিদের অবদান", "period": "2025", "status": "Ongoing", "funder": "Bangla Academy, three-month article research project", "description": { "en": "A focused research project on the contribution of Maithili poets to Sanskrit literature.", "bn": "সংস্কৃত সাহিত্যে মৈথিলি কবিদের অবদান নিয়ে নিবিড় গবেষণা।" }, "url": null, "source": "Detailed CV (May 2024)", "verified": true },
+    { "title": "Amarusatakam: An Analysis on the Diversity of Subject and Forms", "titleBn": "অমরুশতকম্: বিষয় ও রূপের বৈচিত্র্যের বিশ্লেষণ", "period": "2023–2024", "status": "Completed", "funder": "Bangladesh University Grants Commission Research Project", "description": { "en": "A study of diversity in subject and form in Amarusatakam.", "bn": "অমরুশতকম্-এ বিষয় ও রূপের বৈচিত্র্যের অধ্যয়ন।" }, "url": null, "source": "Detailed CV (May 2024)", "verified": true },
+    { "title": "Contributions of Maithili Poets in Sanskrit Literature", "titleBn": "সংস্কৃত সাহিত্যে মৈথিলি কবিদের অবদান", "period": "2025", "status": "Completed", "funder": "Bangla Academy, three-month article research project", "description": { "en": "A focused research project on the contribution of Maithili poets to Sanskrit literature.", "bn": "সংস্কৃত সাহিত্যে মৈথিলি কবিদের অবদান নিয়ে নিবিড় গবেষণা।" }, "url": null, "source": "Detailed CV (May 2024)", "verified": true },
     { "title": "From Shloka to Shabda, Low-Resource Sanskrit to Bengali Translation", "titleBn": "শ্লোক থেকে শব্দ: স্বল্প-সম্পদ সংস্কৃত থেকে বাংলা অনুবাদ", "period": "2025–2026", "status": "Ongoing", "funder": "Bangladesh University Grants Commission Research Project, University of Dhaka", "description": { "en": "A low-resource translation project connecting Sanskrit source text with Bengali output.", "bn": "সংস্কৃত উৎসপাঠের সঙ্গে বাংলা অনুবাদকে যুক্ত করা স্বল্প-সম্পদ অনুবাদ প্রকল্প।" }, "url": null, "source": "Detailed CV (May 2024)", "verified": true }
   ],
   "lectures": [
@@ -85,7 +85,6 @@
     "mphilCompleted": 8,
     "phdCompleted": 2,
     "currentScholars": null,
-    "notes": { "en": "The detailed CV names nine scholars and thesis titles; the headline count reports eight M.Phil. and two Ph.D. scholars. Names are shown here because they are part of the supplied CV and institutional record.", "bn": "বিস্তারিত জীবনবৃত্তান্তে নয়জন গবেষক ও তাঁদের অভিসন্দর্ভের শিরোনাম রয়েছে; সারসংক্ষেপে আটজন এম.ফিল. ও দুজন পিএইচ.ডি. গবেষকের কথা বলা হয়েছে। সরবরাহ করা জীবনবৃত্তান্ত ও প্রাতিষ্ঠানিক নথির অংশ হওয়ায় নামগুলো এখানে রাখা হয়েছে।" },
     "scholars": [
       { "level": "M.Phil.", "name": "Sukla Rani", "title": "Jagannathballava Drama: Uniqueness of Subject and Characteristic of Literary Art." },
       { "level": "M.Phil.", "name": "Plaban Majumder", "title": "Duty of the king in the Ramayana: A Study." },
@@ -93,7 +92,7 @@
       { "level": "M.Phil.", "name": "Ayesha Akter Nabila", "title": "A Comparative Study on the Deities of Vedic Literature and Tripura’s of Bengal Region." },
       { "level": "M.Phil.", "name": "Shima Rani", "title": "The Dramatic Genius of Bhavabhuti: Focusing on Uttararamacharita." },
       { "level": "M.Phil.", "name": "Momtahina Mimma", "title": "Analysis of Hindu Iconography Displayed in Varendra Research Museum." },
-      { "level": "M.Phil.", "name": "Sarmin Islam Sayma", "title": "An Analysis of the Diversity of Subjects and Forms of the Twentieth Century Sanskrit Literature." },
+      { "level": "M.Phil.", "name": "Tapas Bhowmik", "title": "The theoretical form of Aesthetic sweetness in Gaudiya Vaishnava Philosophy of Shri Chaitanyadeva" },
       { "level": "Ph.D.", "name": "Farzana Naz Swarnaprova", "title": "Evolution of the Mythological Female Characters in Bangla Drama." },
       { "level": "Ph.D.", "name": "Titash Kumar Sil", "title": "The Influence of Puja in the Creation of Social, Cultural, Aesthetic and Humanistic Values in Bangladesh." }
     ]
@@ -105,14 +104,16 @@
     { "role": "President, Bangladesh Chapter, Bhagavad Gita Research Foundation", "roleBn": "ভগবদ্গীতা রিসার্চ ফাউন্ডেশনের বাংলাদেশ চ্যাপ্টারের সভাপতি", "period": "2020–present" },
     { "role": "Curriculum and Textbook Planner, National Curriculum Framework 2021", "roleBn": "জাতীয় শিক্ষাক্রম কাঠামো ২০২১-এর কারিকুলাম ও পাঠ্যপুস্তক পরিকল্পনাকারী", "period": "2021" },
     { "role": "Writer, National Curriculum and Textbook materials", "roleBn": "জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক উপকরণের লেখক", "period": "Classes 1–7" },
-    { "role": "Co-editor, Prachyavidya Patrika, Volumes 10 and 11", "roleBn": "প্রাচ্যবিদ্যা পত্রিকার ১০ম ও ১১তম খণ্ডের সহ-সম্পাদক", "period": "2020–2021" }
+    { "role": "Co-editor, Prachyavidya Patrika, Volumes 10 and 11", "roleBn": "প্রাচ্যবিদ্যা পত্রিকার ১০ম ও ১১তম খণ্ডের সহ-সম্পাদক", "period": "2020–2021" },
+    { "role": "Editor, Prachyavidya Patrika, Volumes 16 and 17", "roleBn": "প্রাচ্যবিদ্যা পত্রিকার ১৬তম ও ১৭তম খণ্ডের সম্পাদক", "period": "2020–2021" },
+    { "role": "Director, Professor Dilip Kumar Bhattacharyya Research Center", "roleBn": "প্রফেসর দিলীপ কুমার ভট্টাচার্য রিসার্চ সেন্টারের পরিচালক", "period": "2026–2027" }
   ],
   "awards": [
     { "title": "Devabrata Thakur Roy Silver Medal", "titleBn": "দেবব্রত ঠাকুর রায় রৌপ্যপদক", "year": "1993", "country": "Bangladesh" }
   ],
   "publications": {
     "reportedResearchBookCount": 9,
-    "researchBookRecordsInCv": 8,
+    "researchBookRecordsInCv": 9,
     "reportedResearchArticleCount": 21,
     "articleRecordsInCv": 20,
     "books": [
@@ -123,13 +124,14 @@
       { "title": "Gitaboli (Joint)", "year": 2020, "publisher": "Dhaka University Library, University of Dhaka", "isbn": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
       { "title": "Paresh Chandra Mandal Rachana-Samkalan (joint)", "year": 2021, "publisher": "Professor Dilip Kumar Bhattacharyya Research Centre, Department of Sanskrit, University of Dhaka", "isbn": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
       { "title": "Dilip Kumar Bhattacharyya Rachanasamagra (joint)", "year": 2021, "publisher": "Professor Dilip Kumar Bhattacharyya Research Centre, Department of Sanskrit, University of Dhaka", "isbn": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
-      { "title": "Cāṇakya Sāra-Samgraha (joint)", "year": 2023, "publisher": "Dhaka University Library, University of Dhaka", "isbn": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true }
+      { "title": "Cāṇakya Sāra-Samgraha (joint)", "year": 2023, "publisher": "Dhaka University Library, University of Dhaka", "isbn": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
+      { "title": "Venisamharanam Natakam (Translated and edited)", "year": 2026, "publisher": "Sanskrit Pustak Bhandar, Kolkata", "isbn": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true }
     ],
     "otherBooks": [
       { "title": "Hindu Religion – Teaching Learning", "year": 2010, "publisher": "Ministry of Education, Dhaka", "note": "Written in Bengali" },
       { "title": "Hindu Religion and Moral Education (Joint)", "year": 2016, "publisher": "Bangladesh Open University, Gazipur", "note": "Secondary School Programme" },
       { "title": "Teacher-Curriculum Syllabus Instructions: Hinduism and Moral Education (IX–X) (Joint)", "year": 2016, "publisher": "National Curriculum and Textbook Board, Dhaka", "note": "" },
-      { "title": "Hindu Religion Studies (Class 4, 6 & 7)", "year": 2022, "publisher": "National Curriculum and Textbook Board, Bangladesh", "note": "The CV also records 2023" }
+      { "title": "Hindu Religion Studies (Class 4, 6 & 7)", "year": 2022, "publisher": "National Curriculum and Textbook Board, Bangladesh", "note": "" }
     ],
     "articles": [
       { "title": "Sanskrit Drama (Rupaka) and Nayaka (Hero)", "year": "1999", "journal": "Bangla Academy Patrika", "volumeIssuePages": "Vol. 1, Year 43, pp. 79–91, April–June", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
@@ -142,7 +144,7 @@
       { "title": "Practice of Sanskrit in Sultani Reign", "year": "2016", "journal": "University of Dhaka Arts Faculty Journal", "volumeIssuePages": "Vol. 8, No. 10–11, pp. 201–211, July 2014 to June 2016", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
       { "title": "Shankha (Conch) in Purana and Bangla Literature", "year": "2016", "journal": "Bangladesh Asiatic Society Patrika", "volumeIssuePages": "Vol. 34, pp. 211–224, December", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
       { "title": "Dramatic Art in Sri Harsha’s Works", "year": "2017", "journal": "The Dhaka Bishwabidyalaya Patrika, University of Dhaka", "volumeIssuePages": "Vol. 113–129, pp. 95, March", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
-      { "title": "Dramatics in the View of Agnipuranakar and other Rhetoricians", "year": "2017", "journal": "Prachyavidya Patrika, Professor Dilip Kumar Bhattacharyya Research Centre, Department of Sanskrit, University of Dhaka", "volumeIssuePages": "Vol. 7, pp. 57–70, June", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
+      { "title": "Dramatics in the View of Agnipuranakar and other Rhetoricians (joint)", "year": "2017", "journal": "Prachyavidya Patrika, Professor Dilip Kumar Bhattacharyya Research Centre, Department of Sanskrit, University of Dhaka", "volumeIssuePages": "Vol. 7, pp. 57–70, June", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
       { "title": "Koutukratnakara and Buro Shaliker Ghare Rnow: A Comparative Study", "year": "2017", "journal": "Bangladesh Asiatic Society Patrika", "volumeIssuePages": "Vol. 35, pp. 27–48, June", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
       { "title": "Rtusamhara Kavya of Kalidasa and diversity of Season in the Vaisnavapadabali Literature", "year": "2020", "journal": "Prachyavidya Patrika, Department of Sanskrit, University of Dhaka", "volumeIssuePages": "Vol. 10, pp. 57–79, June", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
       { "title": "Bengali women during the past and post of Sri-Chaitanya", "year": "2020", "journal": "Sahittya Patrika, Department of Bangla, University of Dhaka", "volumeIssuePages": "Vol. 56, No. 1, pp. 139–164, December", "language": "Bengali", "doi": null, "url": null, "linkType": null, "downloadUrl": null, "source": "Detailed CV (May 2024)", "verified": true },
@@ -165,7 +167,7 @@
   "contact": {
     "email": "drmaynatd@du.ac.bd",
     "address": "Department of Sanskrit, Faculty of Arts, University of Dhaka, Dhaka-1000, Bangladesh",
-    "phone": "+88 09666 911 463 (Ext. 6165 / 6166)",
+    "phone": "+8801716103355",
     "contactUrl": "https://du.ac.bd/faculty/faculty_details/SPL/1204"
   },
   "sourcePolicy": {

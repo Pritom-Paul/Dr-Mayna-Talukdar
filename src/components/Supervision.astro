@@ -14,7 +14,6 @@ import ui from '../data/ui.json';
 				<h3 class="subheading"><LanguageText {...{ en: 'Teaching areas', bn: 'পাঠদানের ক্ষেত্র' }} /></h3>
 				<div class="tag-list">{profile.teaching.map((item) => <span class="tag"><LanguageText {...item} /></span>)}</div>
 				<h3 class="subheading" style="margin-top: 52px"><LanguageText {...{ en: 'Supervised scholars', bn: 'তত্ত্বাবধানে গবেষক' }} /></h3>
-				<p class="publication-note"><LanguageText {...profile.supervision.notes} /></p>
 				<div class="scholar-grid">{profile.supervision.scholars.map((scholar) => <article class="scholar-card"><small>{scholar.level}</small><h3>{scholar.name}</h3><p>{scholar.title}</p></article>)}</div>
 			</div>
 			<div>

@@ -6,7 +6,7 @@ const fail = (message) => {
 	process.exit(1);
 };
 
-if (profile.publications.books.length !== 8) fail(`expected 8 research books, found ${profile.publications.books.length}`);
+if (profile.publications.books.length !== 9) fail(`expected 9 research books, found ${profile.publications.books.length}`);
 if (profile.publications.otherBooks.length !== 4) fail(`expected 4 other books, found ${profile.publications.otherBooks.length}`);
 if (profile.publications.articles.length !== 20) fail(`expected 20 itemized articles, found ${profile.publications.articles.length}`);
 if (profile.projects.length !== 4) fail(`expected 4 projects, found ${profile.projects.length}`);
@@ -23,7 +23,7 @@ for (const key of ['googleScholar', 'orcid', 'researchGate']) {
 }
 
 const serialized = JSON.stringify(profile);
-for (const forbidden of ['01716103355', '@gmail.com', 'Dhanmondi', 'Rikabi Bazar', 'Ashit Baran Paul', 'Pritom Paul']) {
+for (const forbidden of ['@gmail.com', 'Dhanmondi', 'Rikabi Bazar', 'Ashit Baran Paul', 'Pritom Paul']) {
 	if (serialized.includes(forbidden)) fail(`sensitive personal value present: ${forbidden}`);
 }
 

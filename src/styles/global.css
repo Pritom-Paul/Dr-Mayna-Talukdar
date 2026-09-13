@@ -165,7 +165,8 @@ html[data-theme='dark'] .status.completed { background: #443919; color: #f0cc73;
 .scholar-card h3 { margin: 0 0 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; }
 .scholar-card small { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .scholar-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
-.talk-list, .service-list { display: grid; gap: 0; }
+.talk-list { display: grid; gap: 0; }
+.service-list { display: grid; gap: 14px; }
 .talk-item, .service-card { padding: 16px 18px; border-bottom: 1px solid var(--line); }
 .talk-item { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
 .talk-item strong { color: var(--indigo-deep); font-size: 14px; }
